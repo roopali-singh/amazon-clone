@@ -1,0 +1,67 @@
+.footer {
+  background-color: #232f3e;
+  min-height: 300px;
+}
+
+.footer__outerColumns {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__text {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__columns {
+  display: flex;
+  flex-direction: column;
+  color: rgb(236, 233, 233);
+  margin: 60px;
+}
+
+.footer__columnHeading {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer__options {
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.footer__infoConditions {
+  margin: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.footer__infoYear {
+  margin: 10px;
+  font-size: 13px;
+  color: rgb(173, 172, 172);
+}
+
+.footer__options:hover {
+  text-decoration: underline;
+}
+
+.footer__infoConditions:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    min-width: max-content;
+  }
+}
