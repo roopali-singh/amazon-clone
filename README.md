@@ -1,6 +1,6 @@
-# Amazon-clone
+# Live Demo: [Amazon-clone](https://amozon-clone-1.firebaseapp.com/)
 
-https://amozon-clone-1.firebaseapp.com/
+
 
 It is a **Full-Ecommerce Built with ReactJs** having the following functionalities:
 Full User Interface.
