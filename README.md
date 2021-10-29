@@ -5,10 +5,10 @@ https://amozon-clone-1.firebaseapp.com/
 It is a **Full-Ecommerce Built with ReactJs** having the following functionalities:
 Full User Interface.
 
-`Login Functionality with Firebase Authentication`
-`Checkout and Basket Page with React Context API`
-`Payment Page with Stripe`
-`Orders History Page`
+- Login Functionality with Firebase Authentication
+- Checkout and Basket Page with React Context API
+- Payment Page with Stripe
+- Orders History Page
 
 
 # Getting Started with Create React App
