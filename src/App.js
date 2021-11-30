@@ -1,20 +1,27 @@
+// STARTED ON 24th Sepember 2020
 import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
+import Checkout from "./Checkout";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./Login";
+import Payment from "./Payment.js";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Orders";
 import AfterHeader from "./AfterHeader";
 import BeforeFooter from "./BeforeFooter";
 import Footer from "./Footer";
-import Checkout from "./Checkout";
-import Login from "./Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
+
+const promise = loadStripe(
+  "pk_test_51Hk40EHSlY6Ot9iD1czZrIzMDlruiT4DOP9oM31PsQZk0fYj13sKxLfHljT9z3mPkIk9Gp7ioAIkKN0MEdCzxBRF009J1j6vo4"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
-  document.title = "Amazon Clone";
-
   useEffect(() => {
     // wil only run once when the app components loads
 
@@ -39,12 +46,17 @@ function App() {
   return (
     //BEM Convention
     <Router>
-      <div className="App">
+      <div className="app">
         <Switch>
           {/* <Route  exact path="/">
             <Header />
             <Home />
           </Route> */}
+
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
 
           <Route path="/login">
             <Login />
@@ -53,6 +65,13 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+
+          <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
 
           <Route path="/">
